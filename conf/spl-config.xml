@@ -19,6 +19,37 @@
         </revisions>
       </repository>
     </project>
+    <project pid="id-1394789900186-2412">
+      <alias>SELF</alias>
+      <build>ant compile</build>
+      <classpaths>
+        <classpath>out/classes</classpath>
+      </classpaths>
+      <repository type="Git" url="https://github.com/d3s-tools/spl-perf-unit-testing-tutorial.git">
+        <revisions>
+          <revision rid="id-1394789900186-2413">
+            <alias>HEAD</alias>
+            <comment/>
+          </revision>
+          <revision rid="id-1394790070233-2417">
+            <alias>init</alias>
+            <value>9d62687</value>
+          </revision>
+          <revision rid="id-1394790216545-2545">
+            <alias>map</alias>
+            <value>2099d24</value>
+          </revision>
+          <revision rid="id-1394790235097-2546">
+            <alias>mapcache</alias>
+            <value>581abe2</value>
+          </revision>
+          <revision rid="id-1395146774326-10169">
+            <alias>regexp</alias>
+            <value>4045973</value>
+          </revision>
+        </revisions>
+      </repository>
+    </project>
   </projects>
   <parameters/>
 </info>
