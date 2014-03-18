@@ -18,8 +18,8 @@ package cz.cuni.mff.d3s.spl.tutorial;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /** Computes summary for each customer. */
 public class PurchaseSummary implements PurchaseAggregator {
@@ -64,7 +64,7 @@ public class PurchaseSummary implements PurchaseAggregator {
 		}
 	}
 
-	private final List<CustomerSummary> data = new LinkedList<>();
+	private final Map<String, CustomerSummary> data = new HashMap<>();
 
 	public PurchaseSummary() {
 	}
@@ -72,21 +72,17 @@ public class PurchaseSummary implements PurchaseAggregator {
 	@Override
 	public void add(final String customer, final String item, final Date date, final int amount, final double price) {
 		final double totalPrice = price * amount;
-		/*
-		 * Because we override the equals method to test only for
-		 * customer, we can use the indexOf to find existing entry.
-		 */
-		CustomerEntry entry = new CustomerEntry(customer);
-		int index = data.indexOf(entry);
-		if (index < 0) {
-			data.add(entry);
-		} else {
-			entry = (CustomerEntry) data.get(index);
+		
+		CustomerEntry entry = (CustomerEntry) data.get(customer);
+		if (entry == null) {
+			entry = new CustomerEntry(customer);
+			data.put(customer, entry);
 		}
+		
 		entry.totalPrice += totalPrice;
 	}
 
 	public Collection<CustomerSummary> get() {
-		return java.util.Collections.unmodifiableCollection(data);
+		return java.util.Collections.unmodifiableCollection(data.values());
 	}
 }
