@@ -53,16 +53,17 @@ public class PurchaseReaderSplTest {
 		
 	@SPL(
 		generators = {
-			"gen=cz.cuni.mff.d3s.spl.tutorial.PurchaseReaderSplTest#generator()"
+			"gen=GENERATORS@reader:cz.cuni.mff.d3s.spl.tutorial.PurchaseReaderSplTest#generator()"
 		},
 		methods = {
-			"read=cz.cuni.mff.d3s.spl.tutorial.PurchaseReader#read"
+			"string=SELF@init:cz.cuni.mff.d3s.spl.tutorial.PurchaseReader#read",
+			"regexp=SELF@regexp:cz.cuni.mff.d3s.spl.tutorial.PurchaseReader#read"
 		},
 		formula = {
-			"for (count {10, 100}) read[gen](count) = read[gen](count)"
+			"for (count {10, 100, 500, 1000}) string[gen](count) > regexp[gen](count)"
 		}
 	)
-	public static void example() {
+	public static void precompilingRegExpIsFaster() {
 		/* Do nothing, just a holder class for the SPL formula. */
 	}
 }
