@@ -23,6 +23,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.regex.Pattern;
 
 /** Utility functions to read purchases. */
 public class PurchaseReader {
@@ -41,13 +42,14 @@ public class PurchaseReader {
 	 */
 	public static void read(final PurchaseAggregator aggregator, final Reader purchases) throws IOException {
 		final BufferedReader reader = new BufferedReader(purchases);
+		final Pattern splitter = Pattern.compile(";");
 		while (true) {
 			final String line = reader.readLine();
 			if (line == null) {
 				break;
 			}
 			
-			final String[] parts = line.split(";");
+			final String[] parts = splitter.split(line);
 			if (parts.length < 5) {
 				continue;
 			}
