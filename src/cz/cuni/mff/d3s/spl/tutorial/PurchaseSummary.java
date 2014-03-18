@@ -65,6 +65,7 @@ public class PurchaseSummary implements PurchaseAggregator {
 	}
 
 	private final Map<String, CustomerSummary> data = new HashMap<>();
+	private CustomerEntry lastEntry = null;
 
 	public PurchaseSummary() {
 	}
@@ -73,13 +74,22 @@ public class PurchaseSummary implements PurchaseAggregator {
 	public void add(final String customer, final String item, final Date date, final int amount, final double price) {
 		final double totalPrice = price * amount;
 		
-		CustomerEntry entry = (CustomerEntry) data.get(customer);
-		if (entry == null) {
-			entry = new CustomerEntry(customer);
-			data.put(customer, entry);
-		}
+		/* First check whether we can reuse the last entry. */
+		if ((lastEntry == null) || (!lastEntry.customer.equals(customer))) {
+			/*
+			 * Because we override the equals method to test only for
+			 * customer, we can use get() to find existing entry.
+			 */
+			lastEntry = (CustomerEntry) data.get(customer);
+		 }
 		
-		entry.totalPrice += totalPrice;
+		if (lastEntry == null) {
+			/* Completely new entry. */
+			lastEntry = new CustomerEntry(customer);
+			data.put(customer, lastEntry);
+		}
+					
+		lastEntry.totalPrice += totalPrice;
 	}
 
 	public Collection<CustomerSummary> get() {
