@@ -1,0 +1,17 @@
+[evaluator.output]
+graphs=true
+
+[deployment]
+warmupCycles=50000
+warmupTime=180
+measurementCycles=100000
+measurementTime=500
+timeout=1000
+
+[access.machine.remote]
+url = hostname.of.the.machine
+path = /path/where/to/store/results/and/classes/that/are/measured
+username = your-login
+keyPath = /home/your-login/.ssh/id_rsa
+fingerprint = se:rv:er:fi:ng:er:pr:in:t0:00:00:00:00:00:00:00
+

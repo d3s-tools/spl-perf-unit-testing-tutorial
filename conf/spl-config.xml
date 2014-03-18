@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+  <projects>
+    <project pid="id-1394645129805-1325">
+      <alias>THIS</alias>
+      <build>ant compile compile-spl</build>
+      <classpaths>
+        <classpath>out/classes</classpath>
+        <classpath>out/spl-classes</classpath>
+      </classpaths>
+      <scanPatterns>
+        <scanPattern>cz.cuni.mff.d3s.spl.tutorial.*</scanPattern>
+      </scanPatterns>
+      <repository type="SourceRelative" url="..">
+        <revisions>
+          <revision rid="id-1394645129805-1326">
+            <alias>HEAD</alias>
+          </revision>
+        </revisions>
+      </repository>
+    </project>
+  </projects>
+  <parameters/>
+</info>
