@@ -50,6 +50,24 @@
         </revisions>
       </repository>
     </project>
+    <project pid="id-1395152015599-13246">
+      <alias>GENERATORS</alias>
+      <build>ant compile-spl</build>
+      <classpaths>
+        <classpath>out/spl-classes</classpath>
+      </classpaths>
+      <repository type="Git" url="https://github.com/d3s-tools/spl-perf-unit-testing-tutorial.git">
+        <revisions>
+          <revision rid="id-1395152015599-13247">
+            <alias>HEAD</alias>
+          </revision>
+          <revision rid="id-1395152038727-13251">
+            <alias>reader</alias>
+            <value>9d62687</value>
+          </revision>
+        </revisions>
+      </repository>
+    </project>
   </projects>
   <parameters/>
 </info>
