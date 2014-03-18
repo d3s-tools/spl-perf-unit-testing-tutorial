@@ -65,6 +65,10 @@
             <alias>reader</alias>
             <value>9d62687</value>
           </revision>
+          <revision rid="id-1395153249590-14071">
+            <alias>summary</alias>
+            <value>55174f8</value>
+          </revision>
         </revisions>
       </repository>
     </project>

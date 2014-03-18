@@ -21,6 +21,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import cz.cuni.mff.spl.SPL;
+
 public class PurchaseSummarySplTest {
 	public static Iterable<Object[]> chunks(int records, int customers, int maxChunkSize) {
 		List<Object[]> result = new ArrayList<>(records);
@@ -47,5 +49,26 @@ public class PurchaseSummarySplTest {
 		}
 		
 		return result;
+	}
+	
+	
+	@SPL(
+		generators = {
+			"gen=GENERATORS@summary:cz.cuni.mff.d3s.spl.tutorial.PurchaseSummarySplTest#chunks()"
+		},
+		methods = {
+			"list=SELF@init:cz.cuni.mff.d3s.spl.tutorial.PurchaseSummary#add",
+			"map=SELF@map:cz.cuni.mff.d3s.spl.tutorial.PurchaseSummary#add",
+			"cache=SELF@mapcache:cz.cuni.mff.d3s.spl.tutorial.PurchaseSummary#add"
+		},
+		formula = {
+			"for (size { 100, 1000 } customers { 10, 100 } chunks { 2, 10 }) "
+				+ "list[gen](size, customers, chunks) > map[gen](size, customers, chunks)"
+				+ " & map[gen](size, customers, chunks) > cache[gen](size, customers, chunks)"
+				+ " & list[gen](size, customers, chunks) > cache[gen](size, customers, chunks)"
+		}
+	)
+	public static void summaryProcessorImprovements() {
+		/* Do nothing, just a holder method for the SPL formula. */
 	}
 }
