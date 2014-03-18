@@ -1,3 +1,4 @@
 out/
-spl/
+spl/dist
+spl/spl-bin.zip
 spl.log
