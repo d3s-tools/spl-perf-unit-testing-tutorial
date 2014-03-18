@@ -64,6 +64,6 @@ public class PurchaseReaderSplTest {
 		}
 	)
 	public static void precompilingRegExpIsFaster() {
-		/* Do nothing, just a holder class for the SPL formula. */
+		/* Do nothing, just a holder method for the SPL formula. */
 	}
 }
