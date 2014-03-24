@@ -12,3 +12,6 @@ branch.
 
 See <http://d3s.mff.cuni.cz/software/spl-java> for more information about
 performance unit testing with SPL.
+
+Directory `slides/` contains slides from tutorial session of the
+[ICPE 2014](http://icpe2014.ipd.kit.edu/) conference.
