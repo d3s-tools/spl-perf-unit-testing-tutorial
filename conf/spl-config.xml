@@ -33,19 +33,19 @@
           </revision>
           <revision rid="id-1394790070233-2417">
             <alias>init</alias>
-            <value>9d62687</value>
+            <value>3046725</value>
           </revision>
           <revision rid="id-1394790216545-2545">
             <alias>map</alias>
-            <value>2099d24</value>
+            <value>eff410c</value>
           </revision>
           <revision rid="id-1394790235097-2546">
             <alias>mapcache</alias>
-            <value>581abe2</value>
+            <value>f9d38fb</value>
           </revision>
           <revision rid="id-1395146774326-10169">
             <alias>regexp</alias>
-            <value>4045973</value>
+            <value>1a48fbc</value>
           </revision>
         </revisions>
       </repository>
@@ -63,11 +63,11 @@
           </revision>
           <revision rid="id-1395152038727-13251">
             <alias>reader</alias>
-            <value>9d62687</value>
+            <value>3046725</value>
           </revision>
           <revision rid="id-1395153249590-14071">
             <alias>summary</alias>
-            <value>55174f8</value>
+            <value>e4edd75</value>
           </revision>
         </revisions>
       </repository>
